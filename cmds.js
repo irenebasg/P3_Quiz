@@ -297,8 +297,8 @@ exports.playCmd = rl => {
 
     const playOne = () => {
 
-//toBeResolved === undefined 
-        if (toBeResolved.length === 0) {
+
+        if (toBeResolved === undefined || toBeResolved.length === 0) {
             // Si el array esta vacío o se ha acabado el juego.
             log('No hay más preguntas. Fin del Juego. Ha acertado:');
             biglog(score, 'magenta');
