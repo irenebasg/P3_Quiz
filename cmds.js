@@ -316,13 +316,13 @@ exports.playCmd = rl => {
                     if (respuesta.toLowerCase().trim() === quiz.answer.toLowerCase().trim()) {
                         //Mensaje de Respuesta
                         score++;
-                        log(`CORRECTO - Lleva ${score} aciertos.`);
+                        console.log(`CORRECTO - Lleva ${score} aciertos.`);
                         playOne();
                     }
                     else {
                         //Mensaje de Respuesta
                         log('INCORRECTO');
-                        log('Fin del juego. Ha tenido  ${score} aciertos:');
+                        console.log(` Fin del juego. Ha tenido ${score} aciertos:`);
                         biglog(score, 'magenta');
                         rl.prompt();
 
