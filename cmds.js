@@ -247,18 +247,18 @@ exports.testCmd = (rl, id) => {
 
 
             return makeQuestion(rl, `${quiz.question}? `)
-                .then(respuesta => {
+                .then(a => {
 
-                    if (respuesta.toLowerCase().trim() === quiz.answer.toLowerCase().trim()) {
+                    if (a.toLowerCase().trim() === quiz.answer.toLowerCase().trim()) {
                         //Mensaje de Respuesta
                         log('Su respuesta es correcta: ');
                         biglog('CORRECTA', 'green');
-                        rl.prompt();
+                        //rl.prompt();
                     } else {
                         //Mensaje de Respuesta
                         log('Su respuesta es incorrecta: ');
                         biglog('INCORRECTA', 'red');
-                        rl.prompt();
+                        //rl.prompt();
                     }
                 });
         })
@@ -288,7 +288,8 @@ exports.playCmd = rl => {
     let toBeResolved = []; //Array con el tamaño del numero de preguntas
 
 
-    models.quiz.findAll().each(quiz => {
+    models.quiz.findAll()
+        .each(quiz => {
         toBeResolved.push(quiz);
     })
         .then(() => {
@@ -296,8 +297,8 @@ exports.playCmd = rl => {
 
     const playOne = () => {
 
-        //toBeResolved === undefined ||
-        if (toBeResolved.length === 0) {
+
+        if (toBeResolved === undefined || toBeResolved.length === 0) {
             // Si el array esta vacío o se ha acabado el juego.
             log('No hay más preguntas. Fin del Juego. Ha acertado:');
             biglog(score, 'magenta');
@@ -311,9 +312,9 @@ exports.playCmd = rl => {
 
             //let quiz = model.getByIndex(seleccion);
             return makeQuestion(rl, `${quiz.question}? `)
-                .then(respuesta => {
+                .then(a => {
 
-                    if (respuesta.toLowerCase().trim() === quiz.answer.toLowerCase().trim()) {
+                    if (a.toLowerCase().trim() === quiz.answer.toLowerCase().trim()) {
                         //Mensaje de Respuesta
                         score++;
                         console.log(`CORRECTO - Lleva ${score} aciertos.`);
@@ -343,7 +344,7 @@ exports.playCmd = rl => {
 
 
     }
-    }
+    };
         playOne();
     })
 
