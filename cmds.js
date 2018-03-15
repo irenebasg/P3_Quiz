@@ -321,9 +321,9 @@ exports.playCmd = rl => {
                     }
                     else {
                         //Mensaje de Respuesta
-                        log('INCORRECTO');
+                        //log('INCORRECTO');
                         console.log(` Fin del juego. Ha tenido ${score} aciertos:`);
-                        biglog(score, 'magenta');
+                        //biglog(score, 'magenta');
                         rl.prompt();
 
                     }
@@ -343,7 +343,7 @@ exports.playCmd = rl => {
 
 
     }
-    }
+    };
         playOne();
     })
 
