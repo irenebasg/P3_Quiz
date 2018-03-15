@@ -296,10 +296,10 @@ exports.playCmd = rl => {
 
     const playOne = () => {
 
-
-        if (toBeResolved === undefined || toBeResolved.length === 0) {
+        //toBeResolved === undefined ||
+        if (toBeResolved.length === 0) {
             // Si el array esta vacío o se ha acabado el juego.
-            log('No hay más preguntas. Ha acertado:');
+            log('No hay más preguntas. Fin del Juego. Ha acertado:');
             biglog(score, 'magenta');
             rl.prompt();
         }
@@ -343,7 +343,7 @@ exports.playCmd = rl => {
 
 
     }
-    };
+    }
         playOne();
     })
 
