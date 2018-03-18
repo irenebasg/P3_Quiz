@@ -323,7 +323,7 @@ exports.playCmd = rl => {
                     else {
                         //Mensaje de Respuesta
                         //log('INCORRECTO');
-                        console.log(` Fin del juego. Ha tenido ${score} aciertos:`);
+                        console.log(`INCORRECTA. Fin del juego. Ha tenido ${score} aciertos:`);
                         //biglog(score, 'magenta');
                         rl.prompt();
 
